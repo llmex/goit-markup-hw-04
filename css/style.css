@@ -339,8 +339,8 @@ button {
   transition: background-color 250ms;
 }
 
-.team-item-icon:hover,
-.team-item-icon:focus {
+.background-social:hover,
+.background-social:focus {
   background-color: #404bbf;
 }
 
