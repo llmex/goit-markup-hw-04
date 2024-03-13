@@ -285,10 +285,12 @@ button {
   color: #2e2f42;
   margin-bottom: 72px;
 }
+
 .team-list {
   display: flex;
   gap: 24px;
 }
+
 .team-item {
   background-color: #ffffff;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -347,6 +349,10 @@ button {
 .team-icon-link {
 }
 
+.icon-fill {
+  fill: #ffffff;
+}
+
 /** ============================== */
 
 /** =============PORTFOLIO================= */
@@ -378,7 +384,30 @@ button {
   background: #fff;
 }
 
+.portfolio-transform {
+  position: relative;
+  overflow: hidden;
+}
+
 .portfolio-img {
+}
+
+.portfolio-item:hover .portfolio-transform-text {
+  transform: translateY(0%);
+}
+
+.portfolio-transform-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background: #4d5ae5;
+  top: 0;
+  height: 100%;
+  padding: 40px 32px 0 32px;
+  position: absolute;
+  transform: translateY(100%);
+  transition-duration: 400ms;
 }
 
 .subtitle-text-container {
