@@ -61,6 +61,8 @@ button {
 .header {
   background: #fff;
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.7);
 }
 
 .container-header {
@@ -122,7 +124,7 @@ button {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -168,6 +170,7 @@ button {
   background: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  max-width: 1440px;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
@@ -175,6 +178,8 @@ button {
     url(../images/people-office.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-title {
@@ -210,6 +215,7 @@ button {
   height: 56px;
   border: none;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn-style:hover,
@@ -232,7 +238,7 @@ button {
 }
 
 .abilities-item {
-  width: calc((100% - 72px) / 4);
+  width: calc((100% - 3 * 24px) / 4);
 }
 
 .abilities-box {
@@ -303,10 +309,7 @@ button {
 }
 
 .name-position-container {
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 32px 0;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
@@ -332,26 +335,31 @@ button {
 .team-list-icon {
   display: flex;
   gap: 24px;
+  justify-content: center;
 }
 
 .background-social {
   width: 40px;
   height: 40px;
-  background: #4d5ae5;
+}
+
+.social-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  padding: 12px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.background-social:hover,
-.background-social:focus {
+.social-link:hover,
+.social-link:focus {
   background-color: #404bbf;
 }
 
-.team-icon-link {
-}
-
-.icon-fill {
+.team-social-icon {
   fill: #ffffff;
 }
 
@@ -384,6 +392,12 @@ button {
 
 .portfolio-item {
   background: #fff;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.7);
 }
 
 .portfolio-transform {
@@ -394,22 +408,23 @@ button {
 .portfolio-img {
 }
 
-.portfolio-item:hover .portfolio-transform-text {
-  transform: translateY(0%);
-}
-
 .portfolio-transform-text {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   top: 0;
   height: 100%;
-  padding: 40px 32px 0 32px;
+  width: 100%;
+  padding: 40px 32px;
   position: absolute;
   transform: translateY(100%);
-  transition-duration: 500ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-transform-text {
+  transform: translateY(0%);
 }
 
 .subtitle-text-container {
@@ -446,7 +461,11 @@ button {
 
 .container-footer {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
+}
+
+.footer-box-info {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -489,7 +508,6 @@ button {
 }
 
 .footer-background-item {
-  padding: 8px;
 }
 
 .footer-social-title {
@@ -500,4 +518,9 @@ button {
   letter-spacing: 0.02em;
   color: #fff;
   margin-bottom: 16px;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: #31d0aa;
 }
